@@ -7,7 +7,7 @@ class BookController < ApplicationController
     @book = Book.new(book_params)
     if@book.save
       flash[:notice] = "投稿に成功しました。successfully create!!"
-      redirect_to book_path: 'successfully create!!'
+      redirect_to book_path(params[:id])
     else
       render :new
   end

@@ -89,6 +89,12 @@
   <div class="actions">
     <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
   </div>
+  
+  <div class="flash-notifications">
+  <% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: key) %>
+  <% end %>
+  
 </form>
   
 
