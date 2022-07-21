@@ -10,8 +10,8 @@ class BookController < ApplicationController
       redirect_to book_path(params[:id])
     else
       render :new
+    end
   end
-end
 
   def index
     @book = Book.all

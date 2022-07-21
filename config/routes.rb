@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
  
   get 'top' => 'book#top'
-  resources :book
+  
+  
+  get 'books/new'
+  post 'books' => 'books#create' 
+  
+  
+  
+ resources :books
 end
