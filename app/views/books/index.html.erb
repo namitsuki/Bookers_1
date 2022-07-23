@@ -1,23 +1,20 @@
 <h1>Books</h1>
 
 <table>
-  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  
+  <tr><% @book.each do |book| %></tr>
     <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
+      <th><%= book.title %></th>
+      <th><%= book.body %></th>
+      <th><%= link_to "Show", book_path(book.id) %></th>
+      <th><%= link_to "Edit", edit_book_path(book.id) %></th>
+      <th><%= link_to "Destroy", book_path(book.id) , method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
     </tr>
-  </thead>
-
-  <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td><a class="show" href="/book">Show</a></td>
-        <td><a class="edit" href="/book/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy" rel="nofollow" data-method="delete" href="/book">Destroy</a></td>
-      </tr>
-  </tbody>
+  <%end%>
 </table>
 
 
